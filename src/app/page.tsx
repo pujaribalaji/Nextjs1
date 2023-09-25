@@ -1,113 +1,199 @@
-import Image from 'next/image'
+import React from "react";
+import Navbar from "./components/navbar";
+import Image from "next/image";
+import logo from "./components/asserts/genmedia_logo-removebg-preview.png";
+import image from "./components/asserts/image.svg";
+import audio from "./components/asserts/audio.svg";
+import video from "./components/asserts/video.svg";
+import Footer from "./components/footer";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <header className="bg-gray-300 flex min-h-screen flex-col">
+        <Navbar />
+        <div className="flex flex-col justify-center items-center h-full">
+          <Image
+            style={{ marginTop: -40 }}
+            src={logo}
+            alt="logo"
+            width={400}
+            height={400}
+          ></Image>
+          <p className="my-0 text-gray-500" style={{ marginTop: -110 }}>
+            Generate video,audio and images using our Generative AI.
+          </p>
+          <div className="bg-white rounded-lg p-2 text-center my-8">
+            <a href="/about">About us</a>
+          </div>
+          <div>
+            <h2 className="text-4xl my-12 font-bold">
+              Ready to create mind-bending content?
+            </h2>
+            <p
+              className="text-gray-500 text-center"
+              style={{ marginTop: "-40px" }}
+            >
+              Our AI is eager to please.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+        <div style={{ display: "flex", marginTop: "70px" }}>
+          <div
+            className="drop-shadow-2xl"
+            style={{
+              backgroundColor: "white",
+              width: "300px",
+              height: "450px",
+              borderRadius: "30px",
+              marginLeft: "100px",
+            }}
+          >
+            <div className="flex flex-col justify-center items-center ">
+              <h5 className="my-5 font-bold">Image Generater</h5>
+              <Image
+                className="my-0"
+                src={image}
+                alt="image"
+                width={250}
+                height={250}
+              ></Image>
+              <p className="text-start mx-2 my-3">
+                Transform Your text prompts into <br></br>stunning visuals with
+                our AI- <br></br>powered image generator.From <br></br>ideas to
+                masterpieces,unlock the <br></br> world of visual storytelling.
+              </p>
+              <a href="/image" className="my-3 underline">
+                Generate Now
+              </a>
+            </div>
+          </div>
+          <div
+            className="drop-shadow-2xl"
+            style={{
+              backgroundColor: "white",
+              width: "300px",
+              height: "450px",
+              borderRadius: "30px",
+              marginLeft: "70px",
+            }}
+          >
+            <div className="flex flex-col justify-center items-center ">
+              <h5 className="my-5 font-bold">Image Generater</h5>
+              <Image
+                className="my-0"
+                src={audio}
+                alt="image"
+                width={250}
+                height={250}
+              ></Image>
+              <p className="text-start mx-3 my-3">
+                Unleash the power of your words <br /> with your audio
+                generator.Create <br /> soundscapes,music,and <br /> voiceovers
+                that bring your ideas to <br /> life,one sound at a time
+              </p>
+              <a href="/audio" className="my-3 underline">
+                Generate Now
+              </a>
+            </div>
+          </div>
+          <div
+            className="drop-shadow-2xl"
+            style={{
+              backgroundColor: "white",
+              width: "300px",
+              height: "450px",
+              borderRadius: "30px",
+              marginLeft: "70px",
+            }}
+          >
+            <div className="flex flex-col justify-center items-center ">
+              <h5 className="my-5 font-bold">Image Generater</h5>
+              <Image
+                className="my-0"
+                src={video}
+                alt="image"
+                width={250}
+                height={250}
+              ></Image>
+              <p className="text-start mx-2 my-3">
+                Turn Your narratives into cinematic <br />
+                expreinces.Our video generator <br /> crafts engaging videos,{" "}
+                <br />
+                animations and narratives that <br /> captivate your audience.
+              </p>
+              <a href="/video" className="my-3 underline">
+                Generate Now
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          className="my-20 flex "
+          style={{ backgroundColor: "#91C8E4", width: "auto", height: "450px" }}
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+          <div className=" flex flex-col">
+            <p className="text-5xl font-bold my-20 mx-20">Our Creations</p>
+            <p
+              className="text-xl text-start text-white mx-20"
+              style={{ marginTop: "-30px" }}
+            >
+              We've helped individuals and companies <br /> alike to create
+              unforgettable multimedia <br /> content.Feast your eyes on these{" "}
+              <br /> examples!
+            </p>
+          </div>
+          <div className=" flex flex-col">
+            <p
+              className="text-xl flex text-white"
+              style={{ marginLeft: "250px", marginTop: "120px" }}
+            >
+              Artifical Symphony
+            </p>
+            <p
+              className="flex flex-col text-white text-xl"
+              style={{ marginLeft: "600px", marginTop: "-20px" }}
+            >
+              2022
+            </p>
+            <hr
+              style={{ marginLeft: "250px", marginTop: "10px", width: "400px" }}
+            />
+            <p
+              className="text-xl flex text-white"
+              style={{ marginLeft: "250px", marginTop: "10px" }}
+            >
+              The Infinite Loop
+            </p>
+            <p
+              className="flex flex-col text-white text-xl"
+              style={{ marginLeft: "600px", marginTop: "-20px" }}
+            >
+              2021
+            </p>
+            <hr
+              style={{ marginLeft: "250px", marginTop: "10px", width: "400px" }}
+            />
+            <p
+              className="text-xl flex text-white"
+              style={{ marginLeft: "250px", marginTop: "10px" }}
+            >
+              Pure Imagination
+            </p>
+            <p
+              className="flex flex-col text-white text-xl"
+              style={{ marginLeft: "600px", marginTop: "-20px" }}
+            >
+              2020
+            </p>
+            <hr
+              style={{ marginLeft: "250px", marginTop: "10px", width: "400px" }}
+            />
+          </div>
+        </div>
+        <Footer />
+      </header>
+    </>
+  );
 }
